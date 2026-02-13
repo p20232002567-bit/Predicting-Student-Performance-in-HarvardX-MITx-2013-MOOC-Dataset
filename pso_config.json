@@ -1,0 +1,29 @@
+{
+  "algorithm": "Particle Swarm Optimization",
+  "random_seed": 45,
+  "objective_function": {
+    "type": "minimize",
+    "formula": "(1 - BalAcc) + lambda * (num_selected_features / D)",
+    "lambda": 0.05
+  },
+  "search_space": {
+    "bounds": [
+      0.0,
+      1.0
+    ],
+    "dimensions": "D"
+  },
+  "swarm": {
+    "size": 12,
+    "max_iterations": 12
+  },
+  "position_handling": {
+    "discretization": "continuous_to_binary"
+  },
+  "fitness_evaluation": {
+    "classifier": "LogisticRegression",
+    "solver": "liblinear",
+    "max_iter": 2000,
+    "metric": "balanced_accuracy"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "model": "CNN",
+  "input_shape": "(n, 1)",
+  "optimizer": "Adam",
+  "loss_function": "binary_crossentropy",
+  "training": {
+    "epochs": [
+      5,
+      10
+    ],
+    "learning_rate": [
+      0.0005,
+      0.001
+    ],
+    "batch_size": [
+      32,
+      64,
+      128
+    ],
+    "early_stopping": {
+      "enabled": true,
+      "patience": 3
+    }
+  },
+  "architecture": {
+    "conv1d_layers": [
+      {
+        "filters": 32,
+        "kernel_size": 5,
+        "activation": "relu"
+      },
+      {
+        "filters": 16,
+        "kernel_size": 3,
+        "activation": "relu"
+      }
+    ],
+    "dropout_rates": [
+      0.1,
+      0.3,
+      0.5
+    ],
+    "output_layer": {
+      "neurons": 1,
+      "activation": "sigmoid"
+    }
+  }
+}

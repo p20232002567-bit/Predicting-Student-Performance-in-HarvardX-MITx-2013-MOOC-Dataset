@@ -1,0 +1,27 @@
+{
+  "model": "LSTM",
+  "optimizer": {
+    "type": "Adam",
+    "learning_rate": 0.0003
+  },
+  "loss_function": "binary_crossentropy",
+  "training": {
+    "epochs": 5,
+    "batch_size": 128
+  },
+  "architecture": {
+    "lstm_layers": [
+      {
+        "units": 8
+      },
+      {
+        "units": 8
+      }
+    ],
+    "dropout_rate": 0.2,
+    "output_layer": {
+      "neurons": 1,
+      "activation": "sigmoid"
+    }
+  }
+}

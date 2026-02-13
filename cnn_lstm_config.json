@@ -1,0 +1,18 @@
+{
+  "model": "CNN_LSTM",
+  "input_shape": "(n, 1)",
+  "architecture": {
+    "conv1d_layer": {
+      "filters": 32,
+      "kernel_size": 3,
+      "activation": "relu"
+    },
+    "lstm_layer": {
+      "units": 32
+    },
+    "output_layer": {
+      "neurons": 1,
+      "activation": "sigmoid"
+    }
+  }
+}

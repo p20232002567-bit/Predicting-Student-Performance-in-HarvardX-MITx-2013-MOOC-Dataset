@@ -1,0 +1,33 @@
+{
+  "model": "Autoencoder",
+  "optimizer": "Adam",
+  "loss_function": "mean_squared_error",
+  "training": {
+    "epochs": 25,
+    "batch_size": 256,
+    "validation_split": 0.1,
+    "early_stopping": {
+      "enabled": true,
+      "patience": 4,
+      "restore_best_weights": true
+    }
+  },
+  "architecture": {
+    "input_layer": {
+      "neurons": "D"
+    },
+    "encoder_layer": {
+      "neurons": "floor(0.6 * D)",
+      "activation": "relu"
+    },
+    "latent_dimension": {
+      "min_neurons": 2
+    },
+    "dropout_rate": 0.1,
+    "decoder_layer": {
+      "neurons": "D",
+      "activation": "linear"
+    }
+  },
+  "output": "latent_representations"
+}

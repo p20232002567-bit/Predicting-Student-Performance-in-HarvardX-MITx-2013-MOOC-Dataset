@@ -1,0 +1,37 @@
+{
+  "algorithm": "Genetic Algorithm",
+  "random_seed": 42,
+  "objective_function": {
+    "type": "maximize",
+    "formula": "BalAcc - lambda * (num_selected_features / D)",
+    "lambda": 0.05
+  },
+  "search_space": {
+    "representation": "binary_mask",
+    "bounds": [
+      0,
+      1
+    ]
+  },
+  "population": {
+    "size": 12,
+    "max_generations": 8
+  },
+  "selection": {
+    "elitism": true,
+    "top_k_elites": 4
+  },
+  "crossover": {
+    "type": "single_point",
+    "range": "[1, D-2]"
+  },
+  "mutation": {
+    "rate": 0.01
+  },
+  "fitness_evaluation": {
+    "classifier": "LogisticRegression",
+    "solver": "liblinear",
+    "max_iter": 2000,
+    "metric": "balanced_accuracy"
+  }
+}
